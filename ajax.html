@@ -29,10 +29,15 @@
         e.preventDefault();
         
         let data = new FormData(e.target)
+        console.log(data)
         
         fetch('https://brother.ycps.digital/api/submit/1', {
           data: data,
-          method: 'post'
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
         })
       })
     </script>
