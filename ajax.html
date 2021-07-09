@@ -26,7 +26,14 @@
     <script type="text/javascript">
       let form  = document.getElementById('formlyForm');
       form.addEventListener('submit', function(e){
-        alert('aaa')
+        e.preventDefault();
+        
+        let data = new FormData(e.target)
+        
+        fetch('https://brother.ycps.digital/api/submit/1', {
+          data: data,
+          method: 'post'
+        })
       })
     </script>
   </body>
